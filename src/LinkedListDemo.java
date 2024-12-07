@@ -17,10 +17,14 @@ public class LinkedListDemo {
 //        l1.add2(6);
 //        l1.add2(3);
 //        l1.add2(7);
+        l1.display();
+
+//        System.out.println("Linked list after deleting first node");
+//        l1.pop();
 //        l1.display();
 
-        System.out.println("Linked list after deleting first number");
-        l1.pop();
+        System.out.println("Linked list after deleting Last node");
+        l1.popLast();
         l1.display();
     }
 }
