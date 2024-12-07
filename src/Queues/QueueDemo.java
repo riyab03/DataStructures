@@ -8,11 +8,15 @@ public class QueueDemo {
         q.enqueue(70);
         q.enqueue(5);
         q.enqueue(3);
-        q.enqueue(7);
-        q.enqueue(6);
-        q.enqueue(13);
-        q.enqueue(17);
         q.front();
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
         q.front();
     }
 }

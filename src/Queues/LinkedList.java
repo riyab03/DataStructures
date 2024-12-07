@@ -39,7 +39,7 @@ public class LinkedList<T>{
     public void display(){
         Node<T> temp=head;
         if(head==null){
-            System.out.println("Linked List is Empty");
+            System.out.println("Queue is Empty ");
             return;
 
         }
@@ -52,21 +52,25 @@ public class LinkedList<T>{
     public void pop(){
         Node<T> temp=head;
         if(head==null){
-            System.out.println("Linked List is Empty");
+            System.out.println("Queue is Empty ");
             return;
         }
         if(head.next==null){
+            System.out.println("Popped element :"+head.data);
             head=null;
-            System.out.println("Linked List is Empty.");
+            System.out.println("Queue is Empty ");
         }
-        head=head.next;
-        top=head;
+        else {
+            System.out.println("Popped element :" + head.data);
+            head = head.next;
+            top = head;
+        }
     }
 
     public void popLast(){
         Node<T> temp=head;
         if(head==null){
-            System.out.println("Linked List is Empty");
+            System.out.println("Queue is Empty ");
             return;
         }
         while(temp.next.next!=null){
@@ -77,6 +81,10 @@ public class LinkedList<T>{
     }
 
     public void peek() {
+        if(head==null){
+            System.out.println("Queue is Empty ");
+            return;
+        }
         System.out.println("Front element :"+top.data);
     }
 }

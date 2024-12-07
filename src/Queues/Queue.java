@@ -8,5 +8,7 @@ public class Queue <T>{
     public void front(){
         l1.peek();
     }
-
+    public void dequeue(){
+        l1.pop();
+    }
 }
