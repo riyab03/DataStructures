@@ -27,7 +27,7 @@ public class LinkedList<T>{
             head=current;
         }
     }
-//   56
+//   7 3 6
 
     public void display(){
         Node<T>temp=head;
@@ -40,5 +40,18 @@ public class LinkedList<T>{
             System.out.println(temp.data);
             temp=temp.next;
         }
+    }
+
+    public void pop(){
+        Node<T>temp=head;
+        if(head==null){
+            System.out.println("Linked List is Empty");
+            return;
+        }
+        if(head.next==null){
+            head=null;
+            System.out.println("Linked List is Empty.");
+        }
+        head=head.next;
     }
 }
