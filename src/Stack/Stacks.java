@@ -9,8 +9,11 @@ public class Stacks<T> {
     public void push(T a){
         l1.add2(a);
     }
-    public void topElement(){
-        l1.topEle();
+    public void peek(){
+        l1.peek();
+    }
+    public void pop(){
+        l1.pop();
     }
 
 

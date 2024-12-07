@@ -3,7 +3,7 @@ package Stack;
 public class LinkedList<T>{
 
     Node<T> head=null;
-    Node<T> top=null;
+    Node<T> top=head;
     public void add(T a){
         Node<T> a1=new Node(a);
         if(head==null){
@@ -50,10 +50,14 @@ public class LinkedList<T>{
             return;
         }
         if(head.next==null){
+            System.out.println("Popped element: " + head.data);
             head=null;
-            System.out.println("Linked List is Empty.");
         }
-        head=head.next;
+        else {
+            System.out.println("Popped element: " + head.data);
+            head = head.next;
+            top = head;
+        }
     }
 
     public void popLast(){
@@ -68,7 +72,11 @@ public class LinkedList<T>{
         temp.next=null;
     }
 
-    public void topEle() {
-        System.out.println(top.data);
+    public void peek() {
+        if(head==null){
+            System.out.println("stack is empty");
+            return;
+        }
+        System.out.println("top element : "+top.data);
     }
 }
