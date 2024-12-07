@@ -15,16 +15,30 @@ public class LinkedList<T>{
         }
     }
 
+    public void add2(T a){
+        Node<T>a1=new Node(a);
+        if(head==null){
+            head=a1;
+            current=head;
+        }
+        else{
+            a1.next=current;
+            current=a1;
+            head=current;
+        }
+    }
+//   56
+
     public void display(){
-        current=head;
+        Node<T>temp=head;
         if(head==null){
             System.out.println("Linked List is Empty");
             return;
 
         }
-        while(current!=null){
-            System.out.println(current.data);
-            current=current.next;
+        while(temp!=null){
+            System.out.println(temp.data);
+            temp=temp.next;
         }
     }
 }
