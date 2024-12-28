@@ -3,8 +3,11 @@ package HashTables;
 public class HashTable {
     public static void main(String[] args) {
         HashTableLL<String,Integer>hashtable=new HashTableLL<>();
-        String sentence="To be or not to be";
-        String[] words=sentence.split(" ");
+        String phrase="Paranoids are not paranoid because they are paranoid but"+
+        "because they keep putting themselves"+
+        "deliberately into paranoid avoidable"+
+        "situations";
+        String[] words=phrase.split(" ");
         for(String word:words){
             Integer count=hashtable.getValue(word);
             if(count==null){
