@@ -11,4 +11,17 @@ public class MyMapNode<K,V>{
         this.next=null;
     }
 
+//    public void setKey(K key) {
+//        this.key = key;
+//    }
+//    public void setValue(K key) {
+//        this.key = key;
+//    }
+//    public K getKey() {
+//        return key;
+//    }
+//    public V getValue() {
+//        return value;
+//    }
+
 }

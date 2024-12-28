@@ -1,17 +1,18 @@
 package HashTables;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Map;
 
 public class HashTableLL<K,V>{
     int n;
-    ArrayList<MyMapNode<K,V>>arr;
+    LinkedList<MyMapNode<K,V>>list[];
 
     HashTableLL(){
         this.n=10;
-        this.arr=new ArrayList<>(n);
+        this.list= new LinkedList[n];
         for(int i=0;i<n;i++){
-            arr.add(null);
+            list[i]=new LinkedList<>();
         }
     }
 
@@ -21,29 +22,36 @@ public class HashTableLL<K,V>{
 
     public V getValue(K key){
         int index=getIndex(key);
-        MyMapNode<K,V>head=arr.get(index);
-        while(head!=null){
-            if(head.key.equals(key)){
-                return head.value;
+        LinkedList<MyMapNode<K,V>>head=list[index];
+        for (MyMapNode<K, V>node:head){
+            if(node.key.equals(key)){
+                return node.value;
             }
-            head=head.next;
         }
         return null;
     }
 
     public void putValue(K key,V value){
         int index=getIndex(key);
-        MyMapNode<K,V>head=arr.get(index);
-        while(head!=null){
-            if(head.key.equals(key)){
-                head.value=value;
+        LinkedList<MyMapNode<K,V>>head=list[index];
+        for(MyMapNode<K,V>node:head){
+            if(node.key.equals(key)){
+                node.value=value;
                 return;
             }
-            head=head.next;
         }
-        head=arr.get(index);
-        MyMapNode<K,V>newNode=new MyMapNode<>(key,value);
-        newNode.next=head;
-        arr.set(index,newNode);
+
+        head.add(new MyMapNode<>(key,value));
+    }
+
+    public void remove(K key) {
+        int index=getIndex(key);
+        LinkedList<MyMapNode<K, V>> head= list[index];
+        for(MyMapNode<K,V>node:head){
+            if(node.key.equals(key)){
+                head.remove(node);
+                return;
+            }
+        }
     }
 }
